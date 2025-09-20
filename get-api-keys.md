@@ -14,7 +14,7 @@
 ### Step 3: Update Your Code
 ```javascript
 // In config.js, replace:
-GEMINI_API_KEY: 'AIzaSyDEyr4Ww-AOK-RxQcAuTo_v1MwLH-jMoSA', // Your actual key here
+GEMINI_API_KEY: 'dasdfyugjhgiuhhl', // Your actual key here
 ```
 
 ---
