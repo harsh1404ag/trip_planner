@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trip Planner - Google Hackathon MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 AI Trip Planner</h1>
+            <p>Personalized itineraries powered by Google AI</p>
+        </header>
+
+        <div class="planner-form">
+            <h2>Plan Your Perfect Trip</h2>
+            <form id="tripForm">
+                <div class="form-group">
+                    <label for="destination">Destination in India:</label>
+                    <select id="destination" required>
+                        <option value="">Select destination</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Trip Duration:</label>
+                    <select id="duration" required>
+                        <option value="">Select duration</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="5">5 Days</option>
+                        <option value="7">7 Days</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget (INR):</label>
+                    <select id="budget" required>
+                        <option value="">Select budget</option>
+                        <option value="10000">₹10,000 - Budget</option>
+                        <option value="25000">₹25,000 - Mid-range</option>
+                        <option value="50000">₹50,000 - Premium</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Interests (select multiple):</label>
+                    <div class="interests">
+                        <label><input type="checkbox" value="heritage"> Heritage & Culture</label>
+                        <label><input type="checkbox" value="adventure"> Adventure</label>
+                        <label><input type="checkbox" value="nightlife"> Nightlife</label>
+                        <label><input type="checkbox" value="nature"> Nature</label>
+                        <label><input type="checkbox" value="food"> Food & Cuisine</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="generateBtn">Generate AI Itinerary</button>
+            </form>
+        </div>
+
+        <div id="loadingDiv" class="loading hidden">
+            <div class="spinner"></div>
+            <p>AI is crafting your perfect itinerary...</p>
+        </div>
+
+        <div id="itineraryResult" class="itinerary-result hidden">
+            <h2>Your Personalized Itinerary</h2>
+            <div id="itineraryContent"></div>
+            <div class="booking-section">
+                <div id="costBreakdown"></div>
+                <button id="bookNowBtn" class="book-btn">Book This Trip - Pay Now</button>
+            </div>
+        </div>
+
+        <div id="bookingModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Complete Your Booking</h3>
+                <p>Total Amount: <span id="totalAmount"></span></p>
+                <div class="payment-form">
+                    <input type="text" placeholder="Card Number" required>
+                    <input type="text" placeholder="Name on Card" required>
+                    <div class="card-details">
+                        <input type="text" placeholder="MM/YY" required>
+                        <input type="text" placeholder="CVV" required>
+                    </div>
+                    <button id="confirmPayment">Confirm Payment</button>
+                    <button id="closeModal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google AI Integration -->
+    <script src="config.js"></script>
+    <script src="google-ai-service.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
